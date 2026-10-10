@@ -3,10 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>See If You Qualify for a Personal Loan</title>
+<title>See If You Qualify for a Personal Loan | Quick, Simple & Secure</title>
+<meta name="description" content="Explore personal loan options tailored to your situation. Funds as soon as the next business day upon approval. Free to check with no obligation.">
+<meta name="keywords" content="personal loan, online loan, quick loan options, borrow money, personal financing, debt consolidation">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0F1D2E">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="See If You Qualify for a Personal Loan">
+<meta property="og:description" content="Explore personal loan options with funds available as soon as the next business day if approved. Free to check with no obligation.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="See If You Qualify for a Personal Loan">
+<meta name="twitter:description" content="Explore personal loan options with funds available as soon as the next business day if approved. Free to check with no obligation.">
+
+<!-- Favicon (Inline SVG loan card icon) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C89B3C' stroke-width='2'%3E%3Crect x='2' y='5' width='20' height='14' rx='2'/%3E%3Cpath d='M2 10h20'/%3E%3Ccircle cx='6' cy='15' r='1.5' fill='%23C89B3C'/%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
 <style>
   :root{
     --navy: #16283D;
@@ -19,13 +44,14 @@
     --line: #E4E0D6;
   }
   *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
   body{ margin:0; font-family: 'Work Sans', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.55; }
   h1, h2, h3{ font-family: 'Fraunces', serif; font-weight: 500; margin: 0; color: var(--navy-deep); }
 
   .hero{
     background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
     color: #F3EFE4;
-    padding: 4.5rem 1.5rem 6rem;
+    padding: 4.5rem 1.5rem 6.5rem;
     position: relative;
     overflow: hidden;
   }
@@ -46,21 +72,40 @@
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .cta-btn:hover{ background: var(--brass-soft); transform: translateY(-1px); }
+  .cta-btn:hover{
+    background: var(--brass-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(200, 155, 60, 0.35);
+  }
+  .cta-btn:focus-visible{
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+  .cta-btn:active{
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(200, 155, 60, 0.2);
+  }
   .hero-fine{ margin-top: 0.85rem; font-size: 0.84rem; color: #8FA0B0; }
 
   .horizon{
-    position: absolute; bottom: -1px; left: 0; width: 100%; height: 90px;
+    position: absolute; bottom: -1px; left: 0; width: 100%; height: 80px;
     background: var(--paper);
-    clip-path: polygon(0 100%, 100% 100%, 100% 40%, 0 70%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 30%, 0 70%);
   }
 
   .trust{
-    max-width: 780px; margin: -1.5rem auto 0; padding: 0 1.5rem 3rem;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: center;
-    position: relative; z-index: 3;
+    max-width: 780px;
+    margin: 1.25rem auto 0;
+    padding: 0 1.5rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 3;
   }
   .trust-item svg{ width: 28px; height: 28px; color: var(--brass); margin-bottom: 0.6rem; }
   .trust-item p{ margin: 0; font-size: 0.92rem; color: var(--slate); font-weight: 500; }
@@ -74,90 +119,128 @@
   .step-text p{ margin: 0; color: var(--slate); font-size: 0.95rem; }
 
   .mid-cta{ text-align: center; padding: 1rem 1.5rem 4rem; }
-  .mid-cta .cta-btn{ background: var(--navy); color: #F3EFE4; }
-  .mid-cta .cta-btn:hover{ background: var(--navy-deep); }
+  .mid-cta .cta-btn{
+    background: var(--navy);
+    color: #F3EFE4;
+    box-shadow: 0 4px 14px rgba(15, 29, 46, 0.15);
+  }
+  .mid-cta .cta-btn:hover{
+    background: var(--navy-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15, 29, 46, 0.3);
+  }
+  .mid-cta .hero-fine{ color: var(--slate); }
 
-  footer{ border-top: 1px solid var(--line); padding: 2rem 1.5rem; text-align: center; }
-  footer p{ max-width: 560px; margin: 0 auto; font-size: 0.78rem; color: #9AA5AE; line-height: 1.6; }
+  footer{ border-top: 1px solid var(--line); padding: 2.25rem 1.5rem; text-align: center; }
+  footer p{ max-width: 560px; margin: 0 auto; font-size: 0.8rem; color: var(--slate); line-height: 1.6; }
 
   @media (max-width: 560px){
-    .trust{ grid-template-columns: 1fr; gap: 1.25rem; }
+    .trust{ grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1rem; }
     .hero{ padding: 3.5rem 1.25rem 5rem; }
+    .cta-btn{ width: 100%; max-width: 320px; }
   }
 </style>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <svg class="hero-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="6" y="14" width="36" height="24" rx="2" stroke="#C89B3C" stroke-width="2"/>
-        <path d="M6 20H42" stroke="#C89B3C" stroke-width="2"/>
-        <circle cx="14" cy="29" r="2.5" fill="#C89B3C"/>
-      </svg>
-      <h1>Need a little financial breathing room?</h1>
-      <p class="sub">See what personal loan options may be available to you — funds as soon as the next business day if approved.</p>
-      <a href="#form" class="cta-btn">Check My Options</a>
-      <p class="hero-fine">Free to check · No obligation · Takes under a minute</p>
-    </div>
-    <div class="horizon"></div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <svg class="hero-icon" aria-hidden="true" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="14" width="36" height="24" rx="2" stroke="#C89B3C" stroke-width="2"/>
+          <path d="M6 20H42" stroke="#C89B3C" stroke-width="2"/>
+          <circle cx="14" cy="29" r="2.5" fill="#C89B3C"/>
+        </svg>
+        <h1>Need a little financial breathing room?</h1>
+        <p class="sub">See what personal loan options may be available to you — funds as soon as the next business day if approved.</p>
+        <!-- Both CTAs point directly to the offer with full fallback and subid forwarding -->
+        <a href="https://afflat3e3.com/trk/lnk/97C0B1F1-07D8-4A07-84AC-83A55AA1629E/?o=26224&c=918277&a=766438&k=64EB0412A6AA41A4D4703FFA0B62F7D4&l=27627" id="heroOfferLink" class="cta-btn affiliate-cta" target="_blank" rel="noopener noreferrer sponsored">Check My Options</a>
+        <p class="hero-fine">Free to check · No obligation · Takes under a minute</p>
+      </div>
+      <div class="horizon"></div>
+    </section>
 
-  <div class="trust">
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.2 6.6H21l-5.4 4 2 6.6L12 15.8 6.4 19.2l2-6.6L3 8.6h6.8z"/></svg>
-      <p>Open to a range of credit situations</p>
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-      <p>Funds as soon as next business day</p>
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
-      <p>No cost, no commitment to check</p>
-    </div>
-  </div>
-
-  <section class="steps">
-    <h2>How it works</h2>
-
-    <div class="step-row">
-      <div class="step-num">1</div>
-      <div class="step-text">
-        <h3>Tell us a bit about your situation</h3>
-        <p>Answer a couple of quick questions — takes under a minute.</p>
+    <div class="trust">
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.2 6.6H21l-5.4 4 2 6.6L12 15.8 6.4 19.2l2-6.6L3 8.6h6.8z"/></svg>
+        <p>Open to a range of credit situations</p>
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <p>Funds as soon as next business day</p>
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        <p>No cost, no commitment to check</p>
       </div>
     </div>
 
-    <div class="step-row">
-      <div class="step-num">2</div>
-      <div class="step-text">
-        <h3>See what you may qualify for</h3>
-        <p>Get matched with loan options based on what you share.</p>
-      </div>
-    </div>
+    <section class="steps">
+      <h2>How it works</h2>
 
-    <div class="step-row">
-      <div class="step-num">3</div>
-      <div class="step-text">
-        <h3>Move forward on your terms</h3>
-        <p>Review the details and decide if it's the right fit for you — no pressure.</p>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h3>Tell us a bit about your situation</h3>
+          <p>Answer a couple of quick questions — takes under a minute.</p>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <div class="mid-cta" id="form">
-    <a href="#" id="offerLink" class="cta-btn">Check My Options</a>
-    <p class="hero-fine" style="margin-top:0.9rem;">You'll be taken to a short form to see what's available.</p>
-  </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h3>See what you may qualify for</h3>
+          <p>Get matched with loan options based on what you share.</p>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h3>Move forward on your terms</h3>
+          <p>Review the details and decide if it's the right fit for you — no pressure.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mid-cta" id="form">
+      <a href="https://afflat3e3.com/trk/lnk/97C0B1F1-07D8-4A07-84AC-83A55AA1629E/?o=26224&c=918277&a=766438&k=64EB0412A6AA41A4D4703FFA0B62F7D4&l=27627" id="offerLink" class="cta-btn affiliate-cta" target="_blank" rel="noopener noreferrer sponsored">Check My Options</a>
+      <p class="hero-fine" style="margin-top:0.9rem;">You'll be taken to a short form to see what's available.</p>
+    </div>
+  </main>
 
   <footer>
     <p>This page connects you with third-party personal loan options. Approval, terms, rates, and funding timelines vary by provider and individual circumstances and are not guaranteed. Always review a lender's terms before agreeing to anything.</p>
   </footer>
 
   <script>
-    // Replace the href below with your MaxBounty tracking link for Personal Loan Authority.
-    document.getElementById('offerLink').href = "https://afflat3e3.com/trk/lnk/97C0B1F1-07D8-4A07-84AC-83A55AA1629E/?o=26224&c=918277&a=766438&k=64EB0412A6AA41A4D4703FFA0B62F7D4&l=27627";
+    // MaxBounty affiliate tracking with automatic query parameter / SubID preservation
+    (function() {
+      const defaultOfferUrl = "https://afflat3e3.com/trk/lnk/97C0B1F1-07D8-4A07-84AC-83A55AA1629E/?o=26224&c=918277&a=766438&k=64EB0412A6AA41A4D4703FFA0B62F7D4&l=27627";
+
+      function getDestinationUrl() {
+        if (!window.location.search) return defaultOfferUrl;
+        try {
+          const offerUrl = new URL(defaultOfferUrl);
+          const currentParams = new URLSearchParams(window.location.search);
+          currentParams.forEach(function(value, key) {
+            // Forward campaign subids (s1-s5), subid, utm params, etc., while preserving core offer parameters
+            if (!['o', 'c', 'a', 'k', 'l'].includes(key.toLowerCase())) {
+              offerUrl.searchParams.set(key, value);
+            }
+          });
+          return offerUrl.toString();
+        } catch (e) {
+          return defaultOfferUrl;
+        }
+      }
+
+      const finalUrl = getDestinationUrl();
+      const links = document.querySelectorAll('.affiliate-cta');
+      links.forEach(function(link) {
+        link.href = finalUrl;
+      });
+    })();
   </script>
 
 </body>

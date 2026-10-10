@@ -1,0 +1,27 @@
+{
+  "name": "personal-loan-bridge",
+  "version": "1.0.0",
+  "description": "Personal loan qualification landing page with Vercel Analytics",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TT-yoh/personal-loan-bridge.git"
+  },
+  "keywords": [
+    "landing-page",
+    "personal-loan",
+    "vercel-analytics"
+  ],
+  "author": "TT-yoh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TT-yoh/personal-loan-bridge/issues"
+  },
+  "homepage": "https://github.com/TT-yoh/personal-loan-bridge#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
